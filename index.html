@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="icon" href="img/icon.jpeg">
+		<!-- FRC Qr Code scanner made by Aaron Jumarang -->
+		<script type="text/javascript" src="js/uwu.js"></script>
+
+		<!-- Credits to qr code scanner Instascan https://github.com/schmich/instascan -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/instascan.min.js"></script> 
+	</head>
+	<body>
+	    <center><img src="img/icon.jpeg" height=100 width =100></center>
+	    <center><h3>2994 ASTECHZ SCOUTING QR CODE SCANNER</h3></center>
+	    <center><video id="preview"></video>
+	    <script type="text/javascript">
+	      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+	      scanner.addListener('scan', function (content) {
+	        alert("Scanned!");
+	        add(content);
+	      });
+	      Instascan.Camera.getCameras().then(function (cameras) {
+	        if (cameras.length > 0) {
+	          scanner.start(cameras[0]);
+	        } else {
+	          console.error('No cameras found.');
+	        }
+	      }).catch(function (e) {
+	        console.error(e);
+	      });
+	  	</script>
+	  	</center>
+
+		<input type="text" placeholder="Type something..." id="myInput">
+		<button id = "add" type="button" value="add" onclick="add()">Scan</button>
+		<button id = "download" type="download" value="download" onclick="download()">Download</button>
+
+		</body>
+</html>

@@ -1,3 +1,3 @@
 # ScoutingAppScanner
-This is the desktop side to the scouting app. We generatre a JSON file from the scouting app we made and get that JSON by using a QR code and scanning it on thos html file. This will scan the JSON and coverts it into a CSV
-To run, launch the index.html file by double clicking on it
+This is the desktop side to the scouting app. We generatre a JSON file from the scouting app we made and get that JSON by using a QR code and scanning it on this html file. This will scan the JSON and coverts it into a CSV
+To run, launch the index.html file, this will open up your default browser and open up the html file. Highly recommend using chrome for this. The browser will ask for camera access twice, make sure to accept both times. The camera will open up and you just have to show the camera the QR code, it will scan, and covert it to a CSV. You can scan multiple QR codes and have them saved in 1 csv file. After you scanned them, click download to download the csv file.

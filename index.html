@@ -8,11 +8,41 @@
 		<!-- Credits to qr code scanner Instascan https://github.com/schmich/instascan -->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/instascan.min.js"></script> 
+		<title>2994 SCOUT</title>
+		<style>
+		button {
+			background-color: #4CAF50; /* Green */
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			background-color: #555555; /* Black */
+		}
+		th, td, p, input {
+					font:14px Verdana;
+				}
+				table, th, td 
+				{
+					border: solid 1px #DDD;
+					border-collapse: collapse;
+					padding: 2px 3px;
+					text-align: center;
+				}
+				th {
+					font-weight:bold;
+		}
+		</style>
 	</head>
 	<body>
 	    <center><img src="img/icon.jpeg" height=100 width =100></center>
-	    <center><h3>2994 ASTECHZ SCOUTING QR CODE SCANNER</h3></center>
-	    <center><video id="preview"></video>
+	    <center><h3>2994 ASTECHZ SCOUTING SCANNER</h3></center>
+
+	    <video id="preview" width="640" height="480" style="background-color:black">></video> 	
 	    <script type="text/javascript">
 	      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
 	      scanner.addListener('scan', function (content) {
@@ -24,16 +54,19 @@
 	          scanner.start(cameras[0]);
 	        } else {
 	          console.error('No cameras found.');
+	          document.write('No cameras found, refresh page.');
 	        }
 	      }).catch(function (e) {
 	        console.error(e);
+	        document.write('No cameras found, refresh page.');
+	        alert("No Cameras Found, refresh page!");
 	      });
 	  	</script>
 	  	</center>
 
-		<input type="text" placeholder="Type something..." id="myInput">
-		<button id = "add" type="button" value="add" onclick="add()">Scan</button>
-		<button id = "download" type="download" value="download" onclick="download()">Download</button>
-
+		<button id = "download" type="download" value="download" onclick="download()">Download CSV</button>
+		<button id = "clear" type="clear" value="clear" onclick="reset()">Clear</button>
+		<div id="entry"></div>
+		<p id="showData"></p>
 		</body>
 </html>
